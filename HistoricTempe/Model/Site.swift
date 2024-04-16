@@ -35,6 +35,7 @@ struct Location : Equatable {
 
 struct GoogleGeocodingResponse : Codable {
     let results : [GoogleGeocodingResult]
+    let status : String
 }
 
 struct GoogleGeocodingResult : Codable {

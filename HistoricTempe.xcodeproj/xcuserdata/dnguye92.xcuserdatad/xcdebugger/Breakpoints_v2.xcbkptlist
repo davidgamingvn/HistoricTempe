@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "78C17264-3507-454F-A94D-5320CEA8BD17"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F749E26-E0CA-4555-B05B-CF6D177ACAEC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "loadHistoricalSites(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7F749E26-E0CA-4555-B05B-CF6D177ACAEC - 89830b899c1189e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Documents/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "7F749E26-E0CA-4555-B05B-CF6D177ACAEC - bad23770388f1cf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Documents/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "485">
+               </Location>
+               <Location
+                  uuid = "7F749E26-E0CA-4555-B05B-CF6D177ACAEC - 32e01a333274f88f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "7F749E26-E0CA-4555-B05B-CF6D177ACAEC - 1b126ca96ea6253"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "485">
+               </Location>
+               <Location
+                  uuid = "7F749E26-E0CA-4555-B05B-CF6D177ACAEC - 1b126ca96ea6253"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "489">
+               </Location>
+               <Location
+                  uuid = "7F749E26-E0CA-4555-B05B-CF6D177ACAEC - 1b126ca96ea6253"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "403">
+               </Location>
+               <Location
+                  uuid = "7F749E26-E0CA-4555-B05B-CF6D177ACAEC - 1b126ca96ea6253"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "468">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A3D9BAB-806E-47FE-99F6-4D464C221C60"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "loadHistoricalSites(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6A3D9BAB-806E-47FE-99F6-4D464C221C60 - 1b126ca96ea6388"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "530">
+               </Location>
+               <Location
+                  uuid = "6A3D9BAB-806E-47FE-99F6-4D464C221C60 - 1b126ca96ea6388"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "444">
+               </Location>
+               <Location
+                  uuid = "6A3D9BAB-806E-47FE-99F6-4D464C221C60 - 1b126ca96ea6388"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "509">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1FDB6F2-A660-43E8-933D-07E07A529288"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "loadHistoricalSites(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C1FDB6F2-A660-43E8-933D-07E07A529288 - 1b126ca96ea6c1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "5104">
+               </Location>
+               <Location
+                  uuid = "C1FDB6F2-A660-43E8-933D-07E07A529288 - 1b126ca96ea6c1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in HistoricTempe.SiteModel.loadHistoricalSites() -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "5162">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16154718-F69B-4FD8-89BE-D5E77610F67B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66225B53-D92C-49F6-9722-D5CC0607ACDF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA7EC39D-9CAB-4954-B540-CD3A845D4557"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD7DCACB-0E54-461E-A20D-1475DFF157A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3C507C6-831E-483C-B9AA-0EBF94A4CBFF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88D724E0-09FD-4B30-AF3E-58D816D7E6A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C87161F-5D0F-4D3C-9EFA-59E31AD5CDA2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8C87161F-5D0F-4D3C-9EFA-59E31AD5CDA2 - e0b8a10535565aba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;HistoricTempe.HistoricalSite&gt;) -&gt; () in HistoricTempe.SiteModel.init() -&gt; HistoricTempe.SiteModel"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "158">
+               </Location>
+               <Location
+                  uuid = "8C87161F-5D0F-4D3C-9EFA-59E31AD5CDA2 - e0b8a10535565aba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;HistoricTempe.HistoricalSite&gt;) -&gt; () in HistoricTempe.SiteModel.init() -&gt; HistoricTempe.SiteModel"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "161">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BE8FAE1-7340-458E-866E-8B434B9AACF4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8656492B-A0FD-4329-AC8A-6C557353407D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6848AE3-9B6A-45B6-A596-1A5313694CB9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A6848AE3-9B6A-45B6-A596-1A5313694CB9 - e0b8a10535565a06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;HistoricTempe.HistoricalSite&gt;) -&gt; () in HistoricTempe.SiteModel.init() -&gt; HistoricTempe.SiteModel"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "297">
+               </Location>
+               <Location
+                  uuid = "A6848AE3-9B6A-45B6-A596-1A5313694CB9 - e0b8a10535565a06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;HistoricTempe.HistoricalSite&gt;) -&gt; () in HistoricTempe.SiteModel.init() -&gt; HistoricTempe.SiteModel"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "355">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BC37B4B-99C1-4E70-B6CF-D03B1DA96485"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3BC37B4B-99C1-4E70-B6CF-D03B1DA96485 - 844c0127f0d7acff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HistoricTempe.SiteModel.fetchLocationDetails(for: HistoricTempe.HistoricalSite) -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1527">
+               </Location>
+               <Location
+                  uuid = "3BC37B4B-99C1-4E70-B6CF-D03B1DA96485 - 844c0127f0d7acff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HistoricTempe.SiteModel.fetchLocationDetails(for: HistoricTempe.HistoricalSite) -&gt; ()"
+                  moduleName = "HistoricTempe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnguye92/Desktop/HistoricTempe/HistoricTempe/Model/SiteModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "850">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "632EC0E4-7FC8-444A-8631-5644B317D1BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HistoricTempe/Model/SiteModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "fetchLocationDetails(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

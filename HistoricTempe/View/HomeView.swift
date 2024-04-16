@@ -14,6 +14,9 @@ struct HomeView: View {
     
     @State private var showSidebar = false
     @StateObject private var siteVM = SiteModel()
+    @State private var numberOfPins: Int = 5 // Default number of pins
+    @State private var selectedSite : HistoricalSite?
+    @State private var hovered = false
     
     let tempePos = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 33.424564, longitude: -111.928001),
@@ -48,26 +51,27 @@ struct HomeView: View {
                     .font(.title)
                     .fontWeight(.semibold)
                 Spacer()
-                Map(coordinateRegion: .constant(tempePos), annotationItems: siteVM.historicalSites) { site in
+                Map(coordinateRegion: .constant(tempePos), annotationItems: siteVM.historicalSites.prefix(numberOfPins)) { site in
                     MapAnnotation(coordinate: CLLocationCoordinate2D(
                         latitude: site.location.latitude!, longitude: site.location.longitude!
                     ), content: {
                         VStack {
-                            Image(systemName: "mappin.and.ellipse")
-                                .font(.title)
-                                .foregroundColor(.red)
-                            Button(action: {}) {
-                                Text(site.propertyName )
-                            }.disabled(true)
-                                .buttonStyle(.borderedProminent)
-                                .background(Color.green)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
+                            Button(action: {
+                                selectedSite = site
+                                hovered = true
+                            }) {
+                                Image(systemName: "mappin.and.ellipse")
+                                    .font(.title)
+                                    .foregroundColor(.red)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .foregroundColor(.white)
                         }
                     })
                 }
-                    .mapStyle(.standard)
-                    .safeAreaInset(edge: .bottom, content: {
+                .mapStyle(.standard)
+                .safeAreaInset(edge: .bottom, content: {
+                    VStack{
                         HStack(alignment: .center)
                         {
                             Button(action: {
@@ -92,9 +96,13 @@ struct HomeView: View {
                             }
                             
                         }
-                        .padding()
+                        // Slider to control pin count
+                        Stepper("Number of sites: \(numberOfPins)", value: $numberOfPins, in: 1...20, step: 1)
+                            .padding()
                     }
-                    )
+                    .padding()
+                }
+                )
                 Spacer()
                 
                 NavigationLink(destination: ARView()) {
@@ -104,6 +112,13 @@ struct HomeView: View {
                         .background(.blue)
                         .cornerRadius(10)
                 }.padding()
+            }.alert(isPresented: $hovered) {
+                Alert(
+                    title: Text(selectedSite?.propertyName ?? ""),
+                    message: Text(selectedSite?.areaOfSignificance ?? ""),
+                    primaryButton: .default(Text("OK")),
+                    secondaryButton: .cancel()
+                )
             }
         }
         .overlay(

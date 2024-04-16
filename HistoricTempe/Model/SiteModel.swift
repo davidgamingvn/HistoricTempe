@@ -12,15 +12,23 @@ import Firebase
 
 class SiteModel : ObservableObject {
     @Published var historicalSites : [HistoricalSite] = []
+    @Published var geocodedLocations: [String: Location] = [:]
     
     private let db = Firestore.firestore()
     private let GOOGLE_API_KEY = "AIzaSyB1YDk503zKf0qQEAChA_6OSNiqjgHZPXM"
     
     init() {
-        loadHistoricalSites()
+        loadHistoricalSites { updatedSites in
+            self.historicalSites = updatedSites
+            for site in updatedSites {
+                self.fetchLocationDetails(for: site)
+            }
+            print(self.geocodedLocations)
+            
+        }
     }
     
-    func loadHistoricalSites() {
+    func loadHistoricalSites(completion: @escaping ([HistoricalSite]) -> Void) {
         db.collection("sites").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error fetching historical sites: \(error)")
@@ -29,32 +37,47 @@ class SiteModel : ObservableObject {
             
             var updatedHistoricalSites: [HistoricalSite] = []
             for document in querySnapshot?.documents ?? [] {
-                guard let areaOfSignificance = document.get("areaOfSignificance") as? String,
+                guard let areaOfSignificance = document.get("areaOfSignificance") as? [String],
                       let category = document.get("categoryOfProperty") as? String,
                       let otherNames = document.get("otherNames") as? [String],
-                      let propertyName = document.get("propertyNames") as? String,
-                      let statusDateTimestamp = document.get("statusDate") as? Timestamp,
+                      let propertyName = document.get("propertyName") as? String,
+                      let statusDateTimestamp = document.get("statusDate") as? String,
                       let streetAndNumber = document.get("streetAndNumber") as? String else {
                     continue
                 }
                 
-                let statusDate = statusDateTimestamp.dateValue()
-                let historicalSite = HistoricalSite(areaOfSignificance: areaOfSignificance, category: category, otherNames: otherNames.joined(separator: ", "), propertyName: propertyName, statusDate: statusDate, streetAndNumber: streetAndNumber, location: Location(latitude: 33.424564, longitude: -111.928001))
+                
+                let statusDate = self.convertStringToDate(dateString: statusDateTimestamp)
+                let historicalSite = HistoricalSite(areaOfSignificance: areaOfSignificance.joined(separator: ", "), category: category, otherNames: otherNames.joined(separator: ", "), propertyName: propertyName, statusDate: statusDate!, streetAndNumber: streetAndNumber, location: Location(latitude: 33.424564, longitude: -111.928001))
                 updatedHistoricalSites.append(historicalSite)
-                self.fetchLocationDetails(for: historicalSite)
+                DispatchQueue.main.async {
+                    self.historicalSites = updatedHistoricalSites
+                }
             }
-            
-            DispatchQueue.main.async {
-                self.historicalSites = updatedHistoricalSites
-            }
+            completion(updatedHistoricalSites)
         }
+    }
+    
+    func convertStringToDate(dateString: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.date(from: dateString)
     }
     
     func fetchLocationDetails(for site: HistoricalSite) {
         let streetAndNumber = site.streetAndNumber
         let address = "\(streetAndNumber), Tempe, AZ, USA"
-        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=\(String(describing: address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)))&key=\(GOOGLE_API_KEY)"
-        guard let url = URL(string : urlString) else {return}
+        guard let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            print("Error encoding address string.")
+            return
+        }
+        
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=\(encodedAddress)&key=\(GOOGLE_API_KEY)"
+        
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
         
         URLSession.shared.dataTask(with: url) {(data, response, error) in
             if let error = error {
@@ -70,7 +93,10 @@ class SiteModel : ObservableObject {
                         DispatchQueue.main.async {
                             var updatedSite = site
                             updatedSite.location = locationDetails
-                            self.historicalSites[self.historicalSites.firstIndex(of: site)!] = updatedSite
+                            if let index = self.historicalSites.firstIndex(of: site) {
+                                self.historicalSites[index] = updatedSite
+                            }
+                            self.geocodedLocations[site.id.uuidString] = locationDetails
                         }
                     }
                 } catch {
