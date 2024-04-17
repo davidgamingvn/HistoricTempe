@@ -47,6 +47,8 @@
 		5E9144072BCE8A1F00EE7FB0 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9143F12BCE8A1D00EE7FB0 /* LandingPage.swift */; };
 		5E9144082BCE8A1F00EE7FB0 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9143F22BCE8A1D00EE7FB0 /* ARView.swift */; };
 		5E91440E2BCE8B7700EE7FB0 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91440D2BCE8B7700EE7FB0 /* Site.swift */; };
+		5ED407A22BCF6D4800DCA722 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED407A12BCF6D4800DCA722 /* SignUp.swift */; };
+		5ED407A42BCF6D8700DCA722 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED407A32BCF6D8700DCA722 /* SignIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		5E9143F12BCE8A1D00EE7FB0 /* LandingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
 		5E9143F22BCE8A1D00EE7FB0 /* ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		5E91440D2BCE8B7700EE7FB0 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		5ED407A12BCF6D4800DCA722 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		5ED407A32BCF6D8700DCA722 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 				5E9143F02BCE8A1D00EE7FB0 /* AuthView.swift */,
 				5E9143F12BCE8A1D00EE7FB0 /* LandingPage.swift */,
 				5E9143F22BCE8A1D00EE7FB0 /* ARView.swift */,
+				5ED407A12BCF6D4800DCA722 /* SignUp.swift */,
+				5ED407A32BCF6D8700DCA722 /* SignIn.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,10 +277,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E91440E2BCE8B7700EE7FB0 /* Site.swift in Sources */,
+				5ED407A42BCF6D8700DCA722 /* SignIn.swift in Sources */,
 				5E9143F82BCE8A1F00EE7FB0 /* SiteModel.swift in Sources */,
 				5E9144052BCE8A1F00EE7FB0 /* HomeView.swift in Sources */,
 				5E9144062BCE8A1F00EE7FB0 /* AuthView.swift in Sources */,
 				5E9144072BCE8A1F00EE7FB0 /* LandingPage.swift in Sources */,
+				5ED407A22BCF6D4800DCA722 /* SignUp.swift in Sources */,
 				5E9144082BCE8A1F00EE7FB0 /* ARView.swift in Sources */,
 				5E9143A42BCE87A500EE7FB0 /* HistoricTempeApp.swift in Sources */,
 			);

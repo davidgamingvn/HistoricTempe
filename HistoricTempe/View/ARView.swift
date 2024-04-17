@@ -1,57 +1,68 @@
-//
-//  ARView.swift
-//  ClassProject
-//
-//  Created by Dinh Phuc Nguyen on 3/17/24.
-//
-
 import SwiftUI
-import MapKit
+import CoreLocation
+import GoogleMaps
 
-struct LookAroundView: UIViewControllerRepresentable {
-    typealias UIViewControllerType = MKLookAroundViewController
+struct ARView: View {
+    let historicalSite: HistoricalSite
     
-    @Binding var tappedLocation: CLLocationCoordinate2D?
-    @Binding var showLookAroundView: Bool
-    
-    func makeUIViewController(context: Context) -> MKLookAroundViewController {
-        return MKLookAroundViewController()
-    }
-    
-    func updateUIViewController(_ uiViewController: MKLookAroundViewController, context: Context) {
-        if let tappedLocation {
-            Task {
-                let scene = await getScene(tappedLocation: .init(latitude: tappedLocation.latitude, longitude: tappedLocation.longitude))
-                
-                if scene == nil {
-                    withAnimation {
-                        self.showLookAroundView = false
-                    }
-                    return
-                }
-                
-                withAnimation {
-                    self.showLookAroundView = true
-                }
-                
-                uiViewController.scene = scene
-            }
-        }
-    }
-    
-    func getScene(tappedLocation: CLLocationCoordinate2D?) async -> MKLookAroundScene? {
-        if let latitude = tappedLocation?.latitude, let longitude = tappedLocation?.longitude {
-            let sceneRequest = MKLookAroundSceneRequest(coordinate: .init(latitude: latitude, longitude: longitude))
+    var body: some View {
+        VStack {
+            Text(historicalSite.propertyName)
+                .font(.headline)
+                .padding()
             
-            do {
-                return try await sceneRequest.scene
-            } catch {
-                return nil
-            }
-        } else {
-            return nil
+            GoogleStreetView(coordinate: CLLocationCoordinate2D(latitude: historicalSite.location.latitude, longitude: historicalSite.location.longitude))
+                .overlay(content: {
+                    GeometryReader { geometry in
+                        Color.clear
+                            .onAppear {
+                                // Place a marker when the view appears
+                                addMarker(geometry: geometry)
+                            }
+                    }
+                })
         }
+    }
+    
+    func addMarker(geometry: GeometryProxy) {
+        let markerView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        markerView.backgroundColor = .clear
+        let markerLabel = UILabel(frame: markerView.bounds)
+        markerLabel.text = historicalSite.propertyName
+        markerLabel.font = .systemFont(ofSize: 12)
+        markerLabel.textAlignment = .center
+        markerLabel.numberOfLines = 2
+        markerView.addSubview(markerLabel)
+        
+        // Convert the coordinate to point on the view
+        let coordinatePoint = CLLocationCoordinate2D(latitude: historicalSite.location.latitude, longitude: historicalSite.location.longitude)
+       
+        let marker = GMSMarker()
+        marker.position = coordinatePoint
+        marker.iconView = markerView
+        
+        // Add marker to the map
+        marker.map = GMSMapView()
     }
 }
 
+struct GoogleStreetView: UIViewRepresentable {
+    let coordinate: CLLocationCoordinate2D
+    
+    func makeUIView(context: Context) -> GMSPanoramaView {
+        let panoramaView = GMSPanoramaView(frame: .zero)
+        panoramaView.moveNearCoordinate(coordinate)
+        return panoramaView
+    }
+    
+    func updateUIView(_ uiView: GMSPanoramaView, context: Context) {
+        uiView.moveNearCoordinate(coordinate)
+    }
+}
 
+struct ARView_Previews: PreviewProvider {
+    static var previews: some View {
+        let sampleSite = HistoricalSite(internalID: "12345", areaOfSignificance: "Phoenix", category: "Property", otherNames: "", propertyName: "State Capitol", statusDate: Date(), streetAndNumber: "1700 W Washington St", location: Location(latitude: 33.448377, longitude: -112.164237))
+        return ARView(historicalSite: sampleSite)
+    }
+}

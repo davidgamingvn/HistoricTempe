@@ -16,6 +16,8 @@ class SiteModel : ObservableObject {
     @Published var wishlist : [HistoricalSite] = []
     @Published var favourites : [HistoricalSite] = []
     @Published var visited : [HistoricalSite] = []
+    @Published var currentUser: User?
+    private var userDocRef: DocumentReference?
     
     private let db = Firestore.firestore()
     private let GOOGLE_API_KEY = "AIzaSyB1YDk503zKf0qQEAChA_6OSNiqjgHZPXM"
@@ -26,44 +28,105 @@ class SiteModel : ObservableObject {
             for site in updatedSites {
                 self.fetchLocationDetails(for: site)
             }
-            print(self.geocodedLocations)
+            self.setupCurrentUser()
+        }
+        setupCurrentUser()
+    }
+    
+    private func setupCurrentUser() {
+        guard let user = Auth.auth().currentUser else {
+            currentUser = nil
+            userDocRef = nil
+            return
+        }
+        
+        let db = Firestore.firestore()
+        userDocRef = db.collection("users").document(user.uid)
+        getCurrentUserData()
+    }
+    
+    private func getCurrentUserData() {
+        userDocRef?.getDocument { snapshot, error in
+            if let error = error {
+                print("Error getting user data: \(error)")
+                return
+            }
             
+            if let snapshot = snapshot, snapshot.exists {
+                let data = snapshot.data()
+                let userId = data?["userId"] as? String
+                let username = data?["username"] as? String
+                self.currentUser = User(userId: userId!, username: username!)
+                self.wishlist = self.getHistoricalSites(from: data?["wishlist"] as? [String] ?? [])
+                self.favourites = self.getHistoricalSites(from: data?["favourites"] as? [String] ?? [])
+                self.visited = self.getHistoricalSites(from: data?["visited"] as? [String] ?? [])
+                
+            } else {
+                self.currentUser = nil
+            }
+        }
+    }
+    
+    private func getHistoricalSites(from ids: [String]) -> [HistoricalSite] {
+        return ids.compactMap { id in
+            self.historicalSites.first { $0.internalID == id }
         }
     }
     
     func addToWishlist(_ site: HistoricalSite) {
         if !wishlist.contains(site) {
             wishlist.append(site)
+            updateUserWishlist()
         }
     }
     
     func addToFavorites(_ site: HistoricalSite) {
         if !favourites.contains(site) {
             favourites.append(site)
+            updateUserFavorites()
         }
     }
     
     func addToVisited(_ site: HistoricalSite) {
         if !visited.contains(site) {
             visited.append(site)
+            updateUserVisited()
         }
     }
     
-    func removeFromWishlist(_ site: HistoricalSite) -> Void {
+    private func updateUserWishlist() {
+        guard let userDocRef = userDocRef else { return }
+        userDocRef.updateData(["wishlist": wishlist.map { $0.internalID }])
+    }
+    
+    private func updateUserFavorites() {
+        guard let userDocRef = userDocRef else { return }
+        userDocRef.updateData(["favourites": favourites.map { $0.internalID }])
+    }
+    
+    private func updateUserVisited() {
+        guard let userDocRef = userDocRef else { return }
+        userDocRef.updateData(["visited": visited.map { $0.internalID }])
+    }
+    
+    func removeFromWishlist(_ site: HistoricalSite) {
         if let index = wishlist.firstIndex(of: site) {
             wishlist.remove(at: index)
+            updateUserWishlist()
         }
     }
     
-    func removeFromFavorites(_ site: HistoricalSite) -> Void {
+    func removeFromFavorites(_ site: HistoricalSite) {
         if let index = favourites.firstIndex(of: site) {
             favourites.remove(at: index)
+            updateUserFavorites()
         }
     }
     
-    func removeFromVisited(_ site: HistoricalSite) -> Void {
+    func removeFromVisited(_ site: HistoricalSite) {
         if let index = visited.firstIndex(of: site) {
             visited.remove(at: index)
+            updateUserVisited()
         }
     }
     
@@ -81,13 +144,15 @@ class SiteModel : ObservableObject {
                       let otherNames = document.get("otherNames") as? [String],
                       let propertyName = document.get("propertyName") as? String,
                       let statusDateTimestamp = document.get("statusDate") as? String,
+                      let siteId = document.documentID as? String,
                       let streetAndNumber = document.get("streetAndNumber") as? String else {
                     continue
                 }
                 
                 
                 let statusDate = self.convertStringToDate(dateString: statusDateTimestamp)
-                let historicalSite = HistoricalSite(areaOfSignificance: areaOfSignificance.joined(separator: ", "), category: category, otherNames: otherNames.joined(separator: ", "), propertyName: propertyName, statusDate: statusDate!, streetAndNumber: streetAndNumber, location: Location(latitude: 33.424564, longitude: -111.928001))
+                
+                let historicalSite = HistoricalSite(internalID: siteId, areaOfSignificance: areaOfSignificance.joined(separator: ", "), category: category, otherNames: otherNames.joined(separator: ", "), propertyName: propertyName, statusDate: statusDate!, streetAndNumber: streetAndNumber, location: Location(latitude: 33.424564, longitude: -111.928001))
                 updatedHistoricalSites.append(historicalSite)
                 DispatchQueue.main.async {
                     self.historicalSites = updatedHistoricalSites

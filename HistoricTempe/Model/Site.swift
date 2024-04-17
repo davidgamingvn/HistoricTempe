@@ -8,9 +8,14 @@
 import Foundation
 import CoreLocation
 
+struct User {
+    let userId: String
+    let username: String
+}
 
 struct HistoricalSite : Identifiable, Equatable {
     let id = UUID()
+    let internalID : String
     let areaOfSignificance : String
     let category : String
     let otherNames : String
