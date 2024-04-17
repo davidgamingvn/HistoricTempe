@@ -13,6 +13,9 @@ import Firebase
 class SiteModel : ObservableObject {
     @Published var historicalSites : [HistoricalSite] = []
     @Published var geocodedLocations: [String: Location] = [:]
+    @Published var wishlist : [HistoricalSite] = []
+    @Published var favourites : [HistoricalSite] = []
+    @Published var visited : [HistoricalSite] = []
     
     private let db = Firestore.firestore()
     private let GOOGLE_API_KEY = "AIzaSyB1YDk503zKf0qQEAChA_6OSNiqjgHZPXM"
@@ -25,6 +28,42 @@ class SiteModel : ObservableObject {
             }
             print(self.geocodedLocations)
             
+        }
+    }
+    
+    func addToWishlist(_ site: HistoricalSite) {
+        if !wishlist.contains(site) {
+            wishlist.append(site)
+        }
+    }
+    
+    func addToFavorites(_ site: HistoricalSite) {
+        if !favourites.contains(site) {
+            favourites.append(site)
+        }
+    }
+    
+    func addToVisited(_ site: HistoricalSite) {
+        if !visited.contains(site) {
+            visited.append(site)
+        }
+    }
+    
+    func removeFromWishlist(_ site: HistoricalSite) -> Void {
+        if let index = wishlist.firstIndex(of: site) {
+            wishlist.remove(at: index)
+        }
+    }
+    
+    func removeFromFavorites(_ site: HistoricalSite) -> Void {
+        if let index = favourites.firstIndex(of: site) {
+            favourites.remove(at: index)
+        }
+    }
+    
+    func removeFromVisited(_ site: HistoricalSite) -> Void {
+        if let index = visited.firstIndex(of: site) {
+            visited.remove(at: index)
         }
     }
     
